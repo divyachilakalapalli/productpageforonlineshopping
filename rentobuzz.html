@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Rentobuzz Assignment</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+  <script type="text/javascript">
+        function GetDays(){
+                 var edate = new Date(document.getElementById("enddate").value);
+                 var sdate = new Date(document.getElementById("startdate").value);
+                 return parseInt((edate - sdate) / (24 * 3600 * 1000));
+        }
+        function cal(){
+		 if(document.getElementById("enddate")){
+		    document.getElementById("numdays").value=GetDays()+" days";
+		     }
+	}
+	function currentDiv(n) {
+  		 showDivs(slideIndex = n);
+        }
+       function showDivs(n){
+		  var i;
+		  var x = document.getElementsByClassName("mySlides");
+		  var dots = document.getElementsByClassName("demo");
+		  if (n > x.length) {slideIndex = 1}
+		  if (n < 1) {slideIndex = x.length}
+		  for (i = 0; i < x.length; i++) {
+		    x[i].style.display = "none";
+		  }
+		  for (i = 0; i < dots.length; i++) {
+		    dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+		  }
+		  x[slideIndex-1].style.display = "block";
+		  dots[slideIndex-1].className += " w3-opacity-off";
+	}
+       $(document).ready(function(){
+                  $('[data-toggle="popover"]').popover();   
+                   });
+   </script>
+   <style>
+	p {
+	  margin-top: 1em;
+	  margin-bottom:2em;
+	  margin-left:5.5em;
+	}
+	.btn-primary {
+	  font-family: Raleway-SemiBold;
+	  color: violet;
+	  letter-spacing: 2px;
+	  line-height: 20px;  
+	  border-radius: 50px;
+	  background: transparent;
+	  transition: all 0.3s ease 0s;
+	}
+   </style>
+</head>
+<body>
+<div id="myNavbar" class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container">
+       <div class="navbar-header">
+           <a href="#" class="navbar-brand"><font color="violet">Rentobuzz</font></a>
+       </div>
+       <ul class="nav navbar-nav">
+	  <div style="margin-top:0.5em" class="dropdown">
+             <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Bangalore
+             <span class="caret"></span></button>
+             <ul class="dropdown-menu">
+                  <li><a href="#">Pune</a></li>
+                  <li><a href="#">Bangalore</a></li>
+                  <li><a href="#">Hyderabad</a></li>
+             </ul>
+          </div>
+      </ul>	   
+      <div class="navbar-collapse collapse">
+	      <ul class="nav navbar-nav navbar-right">
+        	 <li><a href="#">BLOGS</a></li>
+        	 <li><a href="#">CAMPING</a></li>
+        	 <li><a href="#">ABOUT US</a></li>
+        	 <li><a href="#">BUSINESS WITH US</a></li>
+		 <li>  <form class="navbar-form navbar-right">
+      		       <div class="input-group">
+		             <input type="text" class="form-control" placeholder="Search" name="search">
+        	             <div class="input-group-btn">
+          	             <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+                             </div>
+                       </div>
+                       </form></li>
+                 <li><a href="#"><span class="glyphicon glyphicon-shopping-cart"></span></a></li>
+      		 <li><a href="#"><font color="violet">Sign In</font>/<font color="violet">Sign Up</font></a></li>
+		</ul>
+       </div>
+  </div>
+<div class="navbar navbar-default navbar-inverse navbar-static-top" id="nav2">
+<div class="container">
+   <div class="collapse navbar-collapse">
+         <ul style="margin-left:30em" class="nav navbar-nav navbar-center">
+             <li><a href="#" >Adventure</a></li>
+             <li><a href="#" >Business</a></li>
+             <li><a href="#" >Cameras</a></li>
+         </ul>
+   </div>
+</div>
+</div>
+<p><a href="#"><font color="violet">Cameras</font></a>/<a href="#"><font color="violet">Canon</font></a>/Canon EOS 77D DSLR+ 18-135 USM ll LENS</p>
+<div class="container">
+<div class="row">
+ <div class="col-lg-4">
+  <div class="w3-content" style="max-width:400px">
+  <img class="mySlides" src="img1.jpg" style="width:100%;display:none">
+  <img class="mySlides" src="img2.jpg" style="width:100%">
+  <img class="mySlides" src="img3.jpg" style="width:100%;display:none">
+  <img class="mySlides" src="img4.jpg" style="width:100%;display:none">
+  <img class="mySlides" src="img5.jpg" style="width:100%;display:none">
+  <div style="margin-top:10em" class="w3-row-padding w3-section">
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img1.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(1)">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img2.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(2)">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img3.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(3)">
+    </div>
+    <div class="w3-col s3">
+      <img class="demo w3-opacity w3-hover-opacity-off" src="img4.jpg" style="width:100%;cursor:pointer" onclick="currentDiv(4)">
+    </div>    
+  </div>
+  </div>
+  </div>	 
+  <div class="col-lg-8">
+    <h2 style="margin-left:2em">Canon EOS 77D DSLR+ 18-135 USM ll LENS</h2>
+    <p style="margin-top:1em;margin-left:4.4em"><font color="green">600 INR/day</font></a> &nbsp&nbsp&nbsp <a href="#"><font color="violet">See Price Chart</font></a></p>
+    <div class="container">
+       <div class="row">
+          <div style="margin-left:2.8em" class="col-xs-1">
+          <div  class="dropdown">
+    <input id="numdays" class="btn btn-default dropdown-toggle" type="button" value="days??" data-toggle="dropdown" >   
+    <ul class="dropdown-menu">
+      <li><b>Start Date:</b><br><input class="form-control" type="date" id="startdate" name="bday" onchange="cal()"></li>
+      <li><b>End Date:</b><br><input class="form-control" type="date" id="enddate" name="bday" onchange="cal()"></li>
+    </ul>
+  </div>
+  </div>
+ <div class="col-xs-2 col-half-offset">
+    <div class="form-group">
+    <select class="form-control" id="sel1">
+    <option>1 Unit</label></option>
+    <option>2 Unit</option>
+    <option>3 Unit</option>
+    <option>4 Unit</option>
+    <option>5 Unit</option>
+    <option>6 Unit</option>
+    <option>7 Unit</option>
+    <option>8 Unit</option>
+    <option>9 Unit</option>
+    <option>10 Units</option>
+    </select>
+    </div>
+  </div>
+    <div style="margin-left:2em" class="col-xs-2"><div class="container">
+        <i class="material-icons" style="color:violet">bookmark</i><label><font color="violet">Added to Wishlist</font></label>
+         </div></div>
+        <div style="margin-left:2em" class="col-xs-2">
+        <button style="background-color:violet;color:white;" type="button" class="btn btn-primary">Add to Cart</button></div>
+        </div>
+     </div>
+   <div style="margin-top:1em;margin-left:3em" class="container">
+    <div class="row">
+	<div class="col-xs-2">
+	<a href="#" style="text-decoration: none;border-bottom:2px solid violet;padding:10px;">Product Description</a>
+	</div>
+	<div class="col-xs-1">
+	<a href="#" style="text-decoration: none">FAQS</a>
+	</div>
+	<div class="col-xs-2 "><a style="text-decoration: none" href="#">Video Tutorials</a></div>
+	</div>
+	</div>
+	<div style="margin-left:4em;margin-top:2em;"><b>WHATS INCLUDED:</b></div>
+	<div  style="margin-left:15em; class="container">
+		<ul>
+		  <li>Camera body</li>
+		  <li>18-35 USM lens</li>
+		  <li>16 GB memory card</li>
+		  <li>2 Batteries</li>
+		<li>Carry bag</li>
+		</ul>  
+	</div>
+     <div style="margin-left:2.9em;" class="row">
+	<div class="col-xs-3">
+	<b>BEST PRICE IN:</b></div>
+	<div class="col-xs-9">Mumbai <a style="white-space: nowrap;" href="#" title="City&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Rent/day(in INR)" data-html="true" data-toggle="popover" data-trigger="focus" data-content="Mumbai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from 600 INR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>select</a><br>Chennai&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;from 650 INR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>select</a><br>Bangalore&nbsp;&nbsp;from 700 INR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>select</a><br>Hyderabad&nbsp;from 750 INR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a>select</a>">&#9432</a>
+	</div>
+     </div>
+    <div style="margin-top:1em;margin-left:2.9em;" class="row">
+       <div class="col-xs-3">
+       <b >SECURITY DEPOSIT:</b></div>
+       <div class="col-xs-2">5000 INR</div>
+     </div>
+    <div style="margin-top:1em;margin-left:2.9em;" class="row">
+       <div class="col-xs-3"> 
+	  <b >TOTAL AMOUNT:</b></div>
+     <div class="col-xs-2">
+	  5500 INR</div>
+    </div>
+   </div></div></div>
+</div>
+</body>
+</html>
